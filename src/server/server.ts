@@ -1,9 +1,11 @@
-import express from "express";
+const express = require('express');
 
 const server = express();
 
-server.listen("8080", "0.0.0.0", ()=>{
+server.use(express.static("dist"));
+
+server.listen("8080", ()=>{
     console.info(
-        "Express server is listening at http://0.0.0.0:8080"
+        "Express server is listening at port 8080"
     );
 });
