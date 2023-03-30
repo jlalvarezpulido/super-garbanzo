@@ -1,3 +1,5 @@
+import config from "./config";
+
 const express = require("express");
 
 const server = express();
@@ -10,6 +12,8 @@ server.use("/", (req, res) => {
   res.render("index");
 });
 
-server.listen("8080", () => {
-  console.info("Express server is listening at port 8080");
+server.listen(config.PORT, config.HOST, () => {
+  console.info(
+    `Express server is listening at ${config.SERVER_URL}`,
+  );
 });
